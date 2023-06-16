@@ -1,5 +1,5 @@
 ---
-- hosts: remote 
+- hosts: web
   become: true
   gather_facts: true
   tasks:

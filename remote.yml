@@ -1,7 +1,7 @@
 --- 
 remote:
   children:
-    alb:
+    hap:
       hosts:
         4225a859241c.mylabserver.com
     web:
