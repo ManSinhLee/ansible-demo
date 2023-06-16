@@ -14,7 +14,7 @@
       name: httpd
       state: started
       enabled: true
-    tags: enable
+    tags: test
 
   - name: enable listen on private ip address
     lineinfile:
