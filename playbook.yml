@@ -1,0 +1,17 @@
+---
+- hosts: remote 
+  become: true
+  gather_facts: true
+  tasks:
+  - name: install httpd
+    package: 
+      name: httpd
+      state: present
+    tags: install
+
+  - name: start and enable httpd
+    service:
+      name: httpd
+      state: started
+      enabled: true
+    tags: enable
