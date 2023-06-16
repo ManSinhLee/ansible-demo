@@ -16,17 +16,17 @@
       enabled: true
     tags: enable
 
-  - name: modify httpd.conf
-    template:
-      src: httpd.conf.j2
-      dest: /etc/httpd/conf/httpd.conf
-      group: root
-      owner: root 
-      mode: 0644
-    notify: restart_httpd
+  # - name: modify httpd.conf
+  #   template:
+  #     src: httpd.conf.j2
+  #     dest: /etc/httpd/conf/httpd.conf
+  #     group: root
+  #     owner: root 
+  #     mode: 0644
+  #   notify: restart_httpd
 
-  - name: restart_httpd
-    service:
-      name: httpd
-      state: restarted
-    tags: handlers
+  # - name: restart_httpd
+  #   service:
+  #     name: httpd
+  #     state: restarted
+  #   tags: handlers

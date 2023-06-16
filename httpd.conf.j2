@@ -1,33 +1,33 @@
 
-ServerRoot "/etc/httpd"
-Listen "{{ ansible_default_ipv4.address }}":80
-Include conf.modules.d/*.conf
-User apache
-Group apache
-ServerAdmin root@localhost
-ServerName "{{ ansible_nodename }}":80
-<Directory />
-    AllowOverride none
-    Require all denied
-</Directory>
-DocumentRoot "/var/www/html"
+# ServerRoot "/etc/httpd"
+# Listen {{ ansible_default_ipv4.address }}:80
+# Include conf.modules.d/*.conf
+# User apache
+# Group apache
+# ServerAdmin root@localhost
+# ServerName {{ ansible_nodename }}:80
+# <Directory />
+#     AllowOverride none
+#     Require all denied
+# </Directory>
+# DocumentRoot "/var/www/html"
 
-<Directory "/var/www">
-    AllowOverride None
-    # Allow open access:
-    Require all granted
-</Directory>
+# <Directory "/var/www">
+#     AllowOverride None
+#     # Allow open access:
+#     Require all granted
+# </Directory>
 
-<Directory "/var/www/html">
-</Directory>
+# <Directory "/var/www/html">
+# </Directory>
 
-<IfModule dir_module>
-    DirectoryIndex index.html
-</IfModule>
+# <IfModule dir_module>
+#     DirectoryIndex index.html
+# </IfModule>
 
-<Files ".ht*">
-    Require all denied
-</Files>
+# <Files ".ht*">
+#     Require all denied
+# </Files>
 
-ErrorLog "logs/error_log"
-LogLevel warn
+# ErrorLog "logs/error_log"
+# LogLevel warn
