@@ -21,7 +21,7 @@
       src: httpd.conf.j2
       dest: /etc/httpd/conf/httpd.conf
       group: root
-      user: root 
+      owner: root 
       mode: 0644
     notify: restart_httpd
 
