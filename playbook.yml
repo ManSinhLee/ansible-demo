@@ -16,19 +16,10 @@
       enabled: true
     tags: enable
 
-  # - name: modify httpd.conf
-  #   template:
-  #     src: httpd.conf.j2
-  #     dest: /etc/httpd/conf/httpd.conf
-  #     group: root
-  #     owner: root 
-  #     mode: 0644
-  #   notify: restart_httpd
-
   - name: enable listen on private ip address
     lineinfile:
       path: /etc/httpd/conf/httpd.conf
-      regexp: '^{{ ansible_default_ipv4.address }}:80'
+      regexp: '^Listen 80'
       line: 'Listen {{ ansible_default_ipv4.address }}:80'
       backrefs: true
     notify: restart_httpd
