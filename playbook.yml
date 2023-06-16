@@ -23,6 +23,7 @@
       line: 'Listen {{ ansible_default_ipv4.address }}:80'
       backrefs: true
     notify: restart_httpd
+    ignore_errors: true
 
   handlers:
   - name: restart_httpd
