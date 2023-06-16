@@ -25,8 +25,17 @@
   #     mode: 0644
   #   notify: restart_httpd
 
-  # - name: restart_httpd
-  #   service:
-  #     name: httpd
-  #     state: restarted
-  #   tags: handlers
+  - name: enable listen on private ip address
+    lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^Listen 80'
+      line: '{{ ansible_default_ipv4.address }}:80'
+      backrefs: true
+    notify: restart_httpd
+
+
+  - name: restart_httpd
+    service:
+      name: httpd
+      state: restarted
+    tags: handlers
