@@ -28,7 +28,7 @@
   - name: enable listen on private ip address
     lineinfile:
       path: /etc/httpd/conf/httpd.conf
-      regexp: '^{{ ansible_default_ipv4.address }} 80'
+      regexp: '^{{ ansible_default_ipv4.address }}:80'
       line: 'Listen {{ ansible_default_ipv4.address }}:80'
       backrefs: true
     notify: restart_httpd
